@@ -1,7 +1,7 @@
-ShinySlides
+Shiny Slides for "Developing Data Products" Project
 ========================================================
-author: 
-date: 
+author: SK Tan
+date: 17 Mar 2015
 
 First Slide
 ========================================================
@@ -21,6 +21,21 @@ summary(cars)
 ```
 
 Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+#plot(cars)
+```
+
+
+Slide 4
+========================================================
+
+```{r, echo=FALSE}
+#plot(cars)
+```
+
+Slide 5
 ========================================================
 
 ```{r, echo=FALSE}
