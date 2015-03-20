@@ -1,0 +1,1 @@
+This Shiny application explores the graphics libraries available in R using the mtcars dataset. Choose the plot type, variable, colors and graphics library to use.  A new plot will be rendered.

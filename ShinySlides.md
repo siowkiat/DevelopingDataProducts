@@ -1,48 +1,91 @@
-Shiny Slides for "Developing Data Products" Project
+Graphics Explorer
 ========================================================
 author: SK Tan
-date: 17 Mar 2015
+date: 21 Mar 2015
 
-First Slide
+Graphics Explorer
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+**Shiny** app to explore graphics libraries in R
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- base graphics
+- lattice graphs
+- ggplot2 graphs
 
-Slide With Code
+
+<http://sktan.shinyapps.io/shinyapp/>
+
+Screen shot
 ========================================================
+
+![alt text](screen1.png)
+
+
+Base graphics
+========================================================
+left: 55%
+
 
 
 ```r
-summary(cars)
+require(graphics)
+attach(mtcars)
+hist(disp,
+     xlab="disp",
+     col="orange",
+     border="black",
+     main="Histogram",
+     cex.lab=1.5,
+     cex.axis=1,
+     cex.main=2)
 ```
 
+***
+![plot of chunk unnamed-chunk-3](ShinySlides-figure/unnamed-chunk-3-1.png) 
+
+Lattice graphs
+========================================================
+left: 55%
+
+```r
+library(lattice)
+barchart(
+model~wt,
+col="magenta",
+border="red",
+cex.names=0.7,
+main=list("Barchart",
+      cex=2),
+xlab=list(label="wt",
+      cex=1.5))
 ```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
+
+***
+![plot of chunk unnamed-chunk-5](ShinySlides-figure/unnamed-chunk-5-1.png) 
+
+ggplot2 graphs
+========================================================
+left: 55%
+
+
+
+```r
+library(ggplot2)
+print(
+ggplot(df,
+   aes(x=hp,y=mpg))+
+geom_point(
+   color="red",
+   size=3)+ 
+geom_smooth(
+    method="lm",
+    color="blue",
+    linetype=2)+
+facet_grid(.~am.f)+
+labs(x="hp")+ 
+labs(y="mpg")+ 
+labs(title="mpg vs hp")
 ```
 
-Slide With Plot
-========================================================
-
-
-
-
-Slide 4
-========================================================
-
-
-
-Slide 5
-========================================================
-
-
+***
+![plot of chunk unnamed-chunk-8](ShinySlides-figure/unnamed-chunk-8-1.png) 
